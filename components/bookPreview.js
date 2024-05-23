@@ -1,5 +1,5 @@
 /**
- * BookPreview Web Component
+ * HTML element
  *
  * @class
  * @extends HTMLElement
@@ -12,6 +12,7 @@ class BookPreview extends HTMLElement {
    * @returns {Array<string>} An array of attribute names to observe.
    */
   static get observedAttributes() {
+    // These are the attributes that will be monitored for changes.
     return ["author", "id", "image", "title"];
   }
 
@@ -22,6 +23,7 @@ class BookPreview extends HTMLElement {
    */
   constructor() {
     super();
+    // Attach a shadow DOM tree to this instance in open mode.
     this.attachShadow({ mode: "open" });
   }
 
@@ -33,6 +35,7 @@ class BookPreview extends HTMLElement {
    * @param {string|null} newValue - The new attribute value.
    */
   attributeChangedCallback(name, oldValue, newValue) {
+    // Only update if the attribute's value has actually changed.
     if (oldValue !== newValue) {
       this.render();
     }
@@ -42,6 +45,7 @@ class BookPreview extends HTMLElement {
    * Called when the component is inserted into the DOM.
    */
   connectedCallback() {
+    // Initial rendering of the component.
     this.render();
   }
 
@@ -49,12 +53,14 @@ class BookPreview extends HTMLElement {
    * Renders the book preview UI.
    */
   render() {
+    // Get attribute values from the element.
     const author = this.getAttribute("author");
     const id = this.getAttribute("id");
     const image = this.getAttribute("image");
     const title = this.getAttribute("title");
 
-    this.shadowRoot.innerHTML = `
+    // Set the inner HTML of the shadow root to define the component's structure and styling.
+    this.shadowRoot.innerHTML = `     
         <style>
           .preview {
             display: flex;
@@ -99,4 +105,5 @@ class BookPreview extends HTMLElement {
   }
 }
 
+// Define the new element so it can be used in the HTML.
 customElements.define("book-preview", BookPreview);
