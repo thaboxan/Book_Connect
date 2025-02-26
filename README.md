@@ -1,6 +1,5 @@
 # Book Connect
 
-![Book Connect Logo](https://placeholder-for-book-connect-logo.png)
 
 ## 📚 Overview
 
@@ -45,10 +44,3 @@ The application leverages Shadow DOM in Web Components (`this.attachShadow({ mod
 
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Node.js (v14+) for development
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/book-connect.git
-   cd book-connect
