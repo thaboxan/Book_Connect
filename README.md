@@ -46,6 +46,7 @@ Each component encapsulates its structure, style, and behavior, creating a clear
 git clone https://github.com/thaboxan/Book_Connect.git
 cd Book_Connect
 npm install
-npm start ```
+npm start
+ ```
 
 The app will run at http://localhost:3000 by default.
